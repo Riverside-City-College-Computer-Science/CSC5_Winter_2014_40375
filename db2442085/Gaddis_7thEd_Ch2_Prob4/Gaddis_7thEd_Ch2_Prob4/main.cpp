@@ -4,6 +4,7 @@
   purpose:Gaddis_7thEd_Ch2_prob4
 */
 //Libraries
+#include <iomanip>
 #include <cstdlib>
 #include <iostream>
 using namespace std;
@@ -16,7 +17,6 @@ using namespace std;
 int main(int argc, char *argv[]){
     //Variables
     float meal, tax, tip, subttl, total;
-    
     //process
     meal= 44.50;
     tax= 6.75e-2 * meal; 
@@ -25,10 +25,11 @@ int main(int argc, char *argv[]){
     total= meal + tip;
     
     //output
+    cout<<setprecision(2)<<fixed<<showpoint;
     cout<<" Meal Charge $"<< meal<<endl<<
-          " Tax $"<< tax<<endl<<
-          " Tip $"<< tip<<endl<<
-          " Total $"<< total<<endl;
+          " Tax         $"<< tax<<endl<<
+          " Tip         $"<< tip<<endl<<
+          " Total       $"<< total<<endl;
     //Exit Stage Right
     system("PAUSE");
     return EXIT_SUCCESS;
