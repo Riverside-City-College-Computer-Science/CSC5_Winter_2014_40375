@@ -14,7 +14,7 @@ const float VC=3.0e8; //3x10^8 meters/second
 const float CNV_M_KM=1e-3;//Conversion from meters to kilometers
 const float CNV_FT_M=3.048e-1;//conversion from feet to meters
 const float CNV_MI_FT=5.280e3;//conversion from miles to feet
-const float CNV_SEC_YR=6.0e1*6.0e1*24*365;//Conversion from seconds to years
+const float CNV_SEC_YR=6.0e1*6.0e1*2.4e1*3.65e2;//Conversion from seconds to years
 
 //Function Prototypes
 
@@ -36,6 +36,8 @@ int main(){
        <<dKm<<"(km)"<<endl;
     cout<<"Distance to this star in Miles = "
        <<dMiles<<"(miles)"<<endl;
+    cout<<"hello"<<endl;
+
     return 0;
 }
 
