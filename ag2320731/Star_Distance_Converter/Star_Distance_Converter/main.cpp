@@ -41,6 +41,7 @@ int main(){
     //Output the converted distance
     cout<<endl<<"Distance to this star in miles is"<<endl;
     cout<<dMiles<<"miles"<<endl;
+    cout<<"hello"<<endl;
 
     return 0;
 }
