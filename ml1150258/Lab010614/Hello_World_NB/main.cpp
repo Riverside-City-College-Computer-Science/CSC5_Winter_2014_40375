@@ -3,6 +3,7 @@
  * Author: Dr. Mark E. Lehr
  * Created on January 6, 2014, 6:13 PM
  * Our first program in netbeans!
+ * Version 2
  */
 
 //System Libraries
@@ -17,6 +18,7 @@ using namespace std;
 int main(int argc, char** argv) {
     //Print the string Hello World
     cout<<"Hello World"<<endl;
+    cout<<"And Proxima Centauri"<<endl;
     //Exit stage right
     return 1;
 }
