@@ -3,7 +3,7 @@
     January 7th, 2014
     1) Calculate the distance
     to a star
-    2) Utilize scientific notation
+    2) Utilize scientific notations
 */
 
 
