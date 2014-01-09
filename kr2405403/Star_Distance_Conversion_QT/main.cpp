@@ -26,7 +26,7 @@ int main(){
     //Declare variables
     float dLtYrs, dMiles,dKm;
     //Input the distance to a star in light years
-    cout<<"How far away is star in Light Years?"<<endl;
+    cout<<"How far away is star in Light Years??"<<endl;
     cin>>dLtYrs;
     //Process - Calculate distance in miles and km
     dKm=dLtYrs*VC*CNV_M_KM*CNV_SEC_YR;
