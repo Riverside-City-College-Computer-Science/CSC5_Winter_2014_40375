@@ -5,6 +5,7 @@
 
 // System Libraries
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 // Global constants
@@ -15,6 +16,10 @@ using namespace std;
 int main(int argc, char *argv[]){
     //Declare & init variables
     short f,f1=32,f2=212,cIntrp,cEq,c1=0,c2=100;
+    ifstream input;
+    input.open("Table.dat");
+    input >> f1 >> c1;
+    input >> f2 >> c2;
     //Input the temperature f to convert to to c
     cout << "What temperature fahrenheit would you" << endl;
     cout << "like to convert to degrees celsious?" << endl;
@@ -26,6 +31,7 @@ int main(int argc, char *argv[]){
     cout << "C by Equation: " << cEq << endl;
     cout << "C by Interpolation: " << cInterp << endl;
     // Exit, stage right
+    input.close("Table.dat");
     system("PAUSE");
     return EXIT_SUCCESS;
 }
