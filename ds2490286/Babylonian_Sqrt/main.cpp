@@ -16,7 +16,7 @@ using namespace std;
 int main(int argc, char** argv) {
     //Declare local variables
     float x,r,guess;
-    //Input the value to find the sq root of
+    //Input the value to find the square root of
     cout << "Which number do you wish to find the ";
     cout  << "Square Root of? ";
     cin >> x;
