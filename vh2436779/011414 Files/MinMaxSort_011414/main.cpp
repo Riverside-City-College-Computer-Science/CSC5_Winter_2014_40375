@@ -41,25 +41,22 @@ int main(int argc, char *argv[])
     //Sorting
     cout << "The sorted order, from maximum to minimum, is: ";
     if(t1>t2&&t1>t3){
-          cout << t1 << ", ";
           if(t2>t3){
-          cout << t2 << ", " << t3 << endl;
+          cout << t1 << ", " << t2 << ", " << t3 << endl;
           }else{ 
-          cout << t3 << ", " << t2 << endl;
+          cout << t1 << ", " << t3 << ", " << t2 << endl;
           }
     }else if(t2>t1&&t2>t3){
-         cout << t2 << ", ";
          if (t1>t3){
-         cout << t1 << ", " << t3 << endl;
+         cout << t2 << ", " << t1 << ", " << t3 << endl;
          }else{
-         cout << t3 << ", " << t1 << endl;
+         cout << t2 << ", " << t3 << ", " << t1 << endl;
          }
-    }else if(t3>t1&&t3>t2){
-         cout << t3 << ", ";
+    }else{
          if (t1>t2){
-         cout << t1 << ", " << t2 << endl;
+         cout << t3 << ", " << t1 << ", " << t2 << endl;
          }else{
-         cout << t2 << ", " << t1 << endl;
+         cout << t3 << ", " << t2 << ", " << t1 << endl;
          }
     }
     //Exit
