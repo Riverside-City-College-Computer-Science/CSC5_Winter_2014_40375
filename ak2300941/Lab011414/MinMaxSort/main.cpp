@@ -16,7 +16,7 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char *argv[]){
     //Declare Variables
-    unsigned short min,max,t1,t2,t3;
+    T;
     float avg=0;
     //Input a test score
     cout<<"What is the first test score?"<<endl;
@@ -39,21 +39,21 @@ int main(int argc, char *argv[]){
     cout<<"The avg value = "<<avg<<endl;
     //Sorting
     cout<<"The sorted order is"<<endl;
-    if(t1>t2&&t1>t3{
-            cout<<tl<<",";
+    if(t1>t2&&t1>t3){
+            cout<<t1<<",";
             if(t2>t3){
             cout<<t2<<t3<<endl;
       }else{
             cout<<t3<<","<<t2<<endl;                                    
       }              
-      }else if(t2>t1&&t2>t3{
+      }else if(t2>t1&&t2>t3){
             cout<<t2<<",";
             if(t1>t3){
       cout<<t1<<","<<t3<<endl;
       }else{
       cout<<t3<<","<<t1<<endl;
       }
-      }else if(t3>t1&&t3>t2{
+      }else if(t3>t1&&t3>t2){
             cout<<t3<<",";
             if(t1>t2){
             cout<<t1<<","<<t2<<endl;
@@ -61,6 +61,7 @@ int main(int argc, char *argv[]){
             cout<<t2<<","<<t1<<endl;
       }
       //Exit Stage Right
+      }
     system("PAUSE");
     return EXIT_SUCCESS;
 }
