@@ -53,7 +53,7 @@ int main(int argc, char *argv[]){
          }else{
               cout<<t3<<","<<t1<<endl;
          }
-    }else if(t3>t1&&t3>t2){
+    }else{
          cout<<t3<<",";
          if(t1>t2){
               cout<<t1<<","<<t2<<endl;
