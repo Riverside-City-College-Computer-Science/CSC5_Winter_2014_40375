@@ -16,7 +16,7 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char *argv[]){
     //Declare Variables
-    T;
+    int short min,max,t1,t2,t3;
     float avg=0;
     //Input a test score
     cout<<"What is the first test score?"<<endl;
