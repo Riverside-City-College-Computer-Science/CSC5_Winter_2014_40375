@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
         // Calc nickels
                 int nNickel=change/N_VAL;
                 cout << "Nickels -> " << nNickel << endl;
-                change -= nDimes*N_VAL;
+                change -= nNickel*N_VAL;
         //Calc pennies
                 int nPenny=change/P_VAL;
                 cout << "Pennies -> " << nPenny << endl;
