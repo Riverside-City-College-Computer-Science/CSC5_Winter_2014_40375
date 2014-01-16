@@ -18,6 +18,7 @@ int main(int argc, char** argv) {
     //Declare Variables
     bool x=true,y=true;
     //output the table heading
+    cout<<"                     Truth Table"<<endl;
     cout<<"X Y !X !Y X&&Y X||Y X^Y X^Y^Y X^Y^X "
         <<"!(X&&Y) !X||!Y !(X||Y) !X&&!Y"<<endl;  
     
@@ -87,6 +88,8 @@ int main(int argc, char** argv) {
     cout<<(!(x||y)?'T':'F')<<"       ";
     cout<<(!x&&!y?'T':'F')<<"  ";
     cout<<endl;
+    
+    
     return 0;
 }
 
