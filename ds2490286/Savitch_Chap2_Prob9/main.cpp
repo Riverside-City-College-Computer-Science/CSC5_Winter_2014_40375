@@ -19,7 +19,7 @@ using namespace std;
 // Start execution here
 int main(int argc, char** argv) {
     //Local vars
-    float price,iRate,interest,paymnt,prin,owed,intpay,npay=0;
+    float price,iRate,interest,paymnt,prin=0,owed,intpay=0,npay=0;
     //Input price, payment & yearly interest rate
     cout << "What was the purchase price? " << endl;
     cin >> price;
@@ -32,14 +32,16 @@ int main(int argc, char** argv) {
     owed = price;
     cout << setprecision(2) << fixed << showpoint;
     cout << "Month    Owed   Interest Payment Principal" << endl;
+    cout << setw(5)<< 0 << setw(8)<< owed << setw(10)<< intpay
+         << setw(9) << paymnt << setw(10) << prin << endl;
     intpay = owed * interest;
     prin = paymnt - intpay;
-    for (int month = 0; owed > 0; month++) {
+    for (int month = 0; owed > paymnt; month++) {
         owed -= (paymnt - intpay);
         npay = paymnt;
         intpay = owed * interest;
         prin = npay - intpay;
-        cout << setw(5)<< month << setw(8)<< owed << setw(10)<< intpay
+        cout << setw(5)<< month + 1 << setw(8)<< owed << setw(10)<< intpay
              << setw(9) << paymnt << setw(10) << prin << endl;
     }
     //Output final payment
