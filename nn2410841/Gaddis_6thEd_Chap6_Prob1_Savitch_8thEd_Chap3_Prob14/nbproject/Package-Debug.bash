@@ -13,9 +13,9 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=dll
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/savitch_8thed_chap4_prob16
-OUTPUT_BASENAME=savitch_8thed_chap4_prob16
-PACKAGE_TOP_DIR=savitch8thedchap4prob16/
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gaddis_6thed_chap6_prob1_savitch_8thed_chap3_prob14
+OUTPUT_BASENAME=gaddis_6thed_chap6_prob1_savitch_8thed_chap3_prob14
+PACKAGE_TOP_DIR=gaddis6thedchap6prob1savitch8thedchap3prob14/
 
 # Functions
 function checkReturnCode
@@ -60,15 +60,15 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}/savitch8thedchap4prob16/bin"
+makeDirectory "${NBTMPDIR}/gaddis6thedchap6prob1savitch8thedchap3prob14/bin"
 copyFileToTmpDir "${OUTPUT_PATH}.exe" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}.exe" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/savitch8thedchap4prob16.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/gaddis6thedchap6prob1savitch8thedchap3prob14.tar
 cd ${NBTMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/savitch8thedchap4prob16.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/gaddis6thedchap6prob1savitch8thedchap3prob14.tar *
 checkReturnCode
 
 # Cleanup
