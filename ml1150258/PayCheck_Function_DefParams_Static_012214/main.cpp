@@ -17,24 +17,43 @@ const unsigned short FULL_TIME=40;
 //Function Prototypes
 int payCheck(float, short=FULL_TIME);
 short drvHrs();
+int drvHrs(short &);
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Initialize the random number seed
     srand(static_cast<unsigned int>(time(0)));
     //Initialize our loop
-    int loop=100;
+    int loop=80,cnt;
     float pyRate=10.0f;
     for(int emp=1;emp<=loop;emp++){
-        short hrsWrkd=drvHrs();
+        //short hrsWrkd=drvHrs();
+        short hrsWrkd;
+        cnt=drvHrs(hrsWrkd);
         int pay;
         if(hrsWrkd==FULL_TIME)pay=payCheck(pyRate);
         else pay=payCheck(pyRate,hrsWrkd);
         cout<<"Emp "<<emp<<" hrs = "<<hrsWrkd
             <<" Paycheck = $"<<pay<<endl;
     }
+    cout<<"The drvHrs function was called "
+        <<cnt<<" times"<<endl;
     //Exit Stage Right
     return 0;
+}
+
+int drvHrs(short &random){
+    //Count how many times this function is called
+    static int count=0;
+    //90% of time we will have 40 hrsWrkd
+    int pTim=rand()%100+1;
+    if(pTim<=90)random=40;
+    //6% will have less than 40
+    else if(pTim<=96)random=rand()%40;
+    //4% will have overtime
+    else random=rand()%20+40;
+    //Increment the count
+    return ++count;
 }
 
 short drvHrs(){
