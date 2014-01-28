@@ -25,7 +25,7 @@ void avg(int [][COLS],int [],int);
 int main(int argc, char** argv) {
     //Declare variables
     const int ROWS=20;
-    int mnkFood[ROWS][COLS],avgMnk[ROWS];
+    int mnkFood[ROWS][COLS], avgMnk[ROWS];
     char fName[]="./monkey.dat";
     //Read the data from the file
     int actSize=read(fName,mnkFood);
@@ -39,30 +39,30 @@ int main(int argc, char** argv) {
     //a monkey
     cout<<"Largest amount eaten by a monkey = "
         <<max(mnkFood,actSize)<<" ounces"<<endl;
-    //Output the average
-    avg(mnkFood,avgMnk,actSize);
+    //out put the average amount eaten by each monkey
+    avg(mnkFood, avgMnk, actSize);
     //Exit stage right
     return 0;
 }
 
+
 void avg(int monkey[][COLS],int avgMnk[],int ROWS){
-    //Initialize the average array
+    //initialize the average array
     for(int row=0;row<ROWS;row++){
         avgMnk[row]=0;
     }
-    //Sum up the result by monkey
-    for(int row=0;row<ROWS;row++){
-        for(int col=0;col<COLS;col++){
-            avgMnk[row]+=monkey[row][col];
-        }
-    }
-    //Divide by number of days
-    for(int row=0;row<ROWS;row++){
-        avgMnk[row]/=COLS;
-        cout<<"Monkey "<<(row+1)<<" averaged "
-            <<avgMnk[row]<<" ounces/day"<<endl;
+   //sum up the results
+   for (int row=0;row<ROWS;row++){
+       for (int col=0;col<COLS;col++){
+           avgMnk[row] +=monkey[row][col];
+     }
+   }     
+    for (int row=0;row<ROWS;row++){
+         avgMnk[row]/=COLS;
+         cout<<"Monkey "<<(row+1)<<" average "<<avgMnk[row]<<" ounces/day"<<endl;
     }
 }
+
 
 int max(int monkey[][COLS],int ROWS){
     //Declare some small variable;
