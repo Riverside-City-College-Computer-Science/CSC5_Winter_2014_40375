@@ -16,9 +16,6 @@ using namespace std;
 //Function Prototypes
 void filAray(int [],int);
 void prntAry(const int [],int,int);
-void swap(int &,int &);
-void swap(int [],int,int);
-void minPos(int [],int,int);
 void mrkSort(int [],int);
 void xcopy(const int [],int [],int);
 
@@ -60,28 +57,15 @@ void xcopy(const int a[],int b[],int n){
 }
 
 void mrkSort(int a[],int n){
-    for(int i=0;i<n-1;i++){
-        minPos(a,n,i);
+    for(int pos=0;pos<n-1;pos++){
+        for(int i=pos+1;i<n;i++){
+            if(a[pos]>a[i]){
+                int temp=a[pos];
+                a[pos]=a[i];
+                a[i]=temp;
+            }
+        }
     }
-}
-
-void minPos(int a[],int n,int pos){
-    for(int i=pos+1;i<n;i++){
-        if(a[pos]>a[i])swap(a[pos],a[i]);
-        //if(a[pos]>a[i])swap(a,pos,i);
-    }
-}
-
-void swap(int &a,int &b){
-    int temp=a;
-    a=b;
-    b=temp;
-}
-
-void swap(int a[],int i,int j){
-    int temp=a[i];
-    a[i]=a[j];
-    a[j]=temp;
 }
 
 void prntAry(const int a[],int n,int perLine){
