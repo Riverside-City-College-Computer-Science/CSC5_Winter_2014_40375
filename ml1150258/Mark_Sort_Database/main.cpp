@@ -35,8 +35,8 @@ int main(int argc, char** argv) {
     mrkSort(array,index,SIZE);
     //Print the array
     prntAry(array,index,SIZE,10);
-    //prntAry(index,SIZE,10);
-    //prntAry(array,SIZE,10);
+    prntAry(index,SIZE,10);
+    prntAry(array,SIZE,10);
     //Exit Stage Right!!!
     return 0;
 }

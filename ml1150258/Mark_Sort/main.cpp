@@ -14,12 +14,12 @@ using namespace std;
 
 //Function Prototypes
 void filAray(int [],int);
-void prntAry(int [],int,int);
+void prntAry(const int [],int,int);
 void swap(int &,int &);
 void swap(int [],int,int);
 void minPos(int [],int,int);
 void mrkSort(int [],int);
-void copy(int [],int [],int);
+void xcopy(const int [],int [],int);
 
 //Executions Begin Here!
 int main(int argc, char** argv) {
@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     //Fill the arrays
     filAray(array,SIZE);
-    copy(array,brray,SIZE);
+    xcopy(array,brray,SIZE);
     //Print the array
     prntAry(array,SIZE,10);
     //Test out the min pos routine
@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void copy(int a[],int b[],int n){
+void xcopy(const int a[],int b[],int n){
     for(int i=0;i<n;i++){
         b[i]=a[i];
     }
@@ -72,7 +72,7 @@ void swap(int a[],int i,int j){
     a[j]=temp;
 }
 
-void prntAry(int a[],int n,int perLine){
+void prntAry(const int a[],int n,int perLine){
     cout<<endl;
     for(int i=0;i<n;i++){
         cout<<a[i]<<" ";

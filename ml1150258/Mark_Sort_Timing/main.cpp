@@ -7,56 +7,58 @@
 //System Libraries
 #include <cstdlib>
 #include <iostream>
-#include <vector>
 #include <ctime>
 using namespace std;
 
 //Global Constants
 
 //Function Prototypes
-void filVec(vector<int> &,int);
-void prntVec(const vector<int> &,int);
+void filAray(int [],int);
+void prntAry(const int [],int,int);
 void swap(int &,int &);
-void swap(vector<int> &,int,int);
-void minPos(vector<int> &,int);
-void mrkSort(vector<int> &);
-void xcopy(const vector<int> &,vector<int> &);
+void swap(int [],int,int);
+void minPos(int [],int,int);
+void mrkSort(int [],int);
+void xcopy(const int [],int [],int);
 
 //Executions Begin Here!
 int main(int argc, char** argv) {
     //Declare variables and initialize the
     //random number generator
-    const int SIZE=200;
-    vector<int> array;
-    vector<int> brray;
+    const int SIZE=141000;
+    int array[SIZE],brray[SIZE];
     srand(static_cast<unsigned int>(time(0)));
     //Fill the arrays
-    filVec(array,SIZE);
-    xcopy(array,brray);
+    filAray(array,SIZE);
+    xcopy(array,brray,SIZE);
     //Print the array
-    prntVec(array,10);
+    //prntAry(array,SIZE,10);
     //Test out the min pos routine
-    mrkSort(brray);
+    int strTime=time(0);
+    mrkSort(brray,SIZE);
+    int endTime=time(0);
+    cout<<"Total Time Taken = "<<endTime-strTime
+            <<" secs"<<endl;
     //Print the array
-    prntVec(brray,10);
+    //prntAry(brray,SIZE,10);
     //Exit Stage Right!!!
     return 0;
 }
 
-void xcopy(const vector<int> &a,vector<int> &b){
-    for(int i=0;i<a.size();i++){
-        b.push_back(a[i]);
+void xcopy(const int a[],int b[],int n){
+    for(int i=0;i<n;i++){
+        b[i]=a[i];
     }
 }
 
-void mrkSort(vector<int> &a){
-    for(int i=0;i<a.size()-1;i++){
-        minPos(a,i);
+void mrkSort(int a[],int n){
+    for(int i=0;i<n-1;i++){
+        minPos(a,n,i);
     }
 }
 
-void minPos(vector<int> &a,int pos){
-    for(int i=pos+1;i<a.size();i++){
+void minPos(int a[],int n,int pos){
+    for(int i=pos+1;i<n;i++){
         if(a[pos]>a[i])swap(a[pos],a[i]);
         //if(a[pos]>a[i])swap(a,pos,i);
     }
@@ -68,15 +70,15 @@ void swap(int &a,int &b){
     b=temp;
 }
 
-void swap(vector<int> &a,int i,int j){
+void swap(int a[],int i,int j){
     int temp=a[i];
     a[i]=a[j];
     a[j]=temp;
 }
 
-void prntVec(const vector<int> &a,int perLine){
+void prntAry(const int a[],int n,int perLine){
     cout<<endl;
-    for(int i=0;i<a.size();i++){
+    for(int i=0;i<n;i++){
         cout<<a[i]<<" ";
         if(i%10==(perLine-1))cout<<endl;
     }
@@ -84,8 +86,8 @@ void prntVec(const vector<int> &a,int perLine){
 }
 
 //2 Digit random numbers
-void filVec(vector<int> &a,int n){
+void filAray(int a[],int n){
     for(int i=0;i<n;i++){
-        a.push_back(rand()%90+10);
+        a[i]=rand()%90+10;
     }
 }
