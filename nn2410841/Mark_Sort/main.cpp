@@ -1,7 +1,7 @@
 /* 
- * Nhat Nguyen
+ * File:   main.cpp
+ * Author: Dr. Mark E. Lehr
  * Created on February 3, 2014, 8:13 AM
- * Mark_Sort
  */
 
 //System Libraries
@@ -13,75 +13,80 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void filAray(int [], int);
-void prntAry(int [], int, int);
-void swap(int &, int&);
-void swap(int [], int, int);
-void minPos(int [], int, int);
-void mrkSort(int [], int);
-void copy(int [], int [], int);
+void filAray(int *,int);
+void prntAry(const int *,int,int);
+void swap(int &,int &);
+void swap(int *,int,int);
+void minPos(int *,int,int);
+void mrkSort(int *,int);
+void xcopy(const int *,int *,int);
 
-//Execution Begins Here
+//Executions Begin Here!
 int main(int argc, char** argv) {
-    //Declare Variables and initialize the random number generator
+    //Declare variables, allocate memory, 
+    //and initialize the random number generator
     const int SIZE=200;
-    int array[SIZE], brray[SIZE];
+    int *array=new int[SIZE];
+    int *brray=new int[SIZE];
     srand(static_cast<unsigned int>(time(0)));
-    //Fill the array
+    //Fill the arrays
     filAray(array,SIZE);
-    copy(array,brray,SIZE);
+    xcopy(array,brray,SIZE);
     //Print the array
     prntAry(array,SIZE,10);
-    //Test the array
+    //Test out the min pos routine
     mrkSort(brray,SIZE);
     //Print the array
     prntAry(brray,SIZE,10);
-    
+    //Exit Stage Right!!!
+    delete []array;
+    delete []brray;
     return 0;
 }
 
-//2 Digit Random Number
-void filAray(int a[], int n){
+void xcopy(const int *a,int *b,int n){
     for(int i=0;i<n;i++){
-        a[i]=rand()%90+10;
+        *(b+i)=*(a+i);
     }
 }
 
-void prntAry(int a[], int n, int perLine){
-    cout<<endl;
-    for(int i=0;i<n;i++){
-        cout<<a[i]<<" ";
-        if(i%10==(perLine-1))cout<<endl;
+void mrkSort(int *a,int n){
+    for(int i=0;i<n-1;i++){
+        minPos(a,n,i);
     }
-    cout<<endl;
 }
 
-void swap(int &a, int &b){
+void minPos(int *a,int n,int pos){
+    for(int i=pos+1;i<n;i++){
+        if(*(a+pos)>*(a+i))swap(*(a+pos),*(a+i));
+        //if(a[pos]>a[i])swap(a,pos,i);
+    }
+}
+
+void swap(int &a,int &b){
     int temp=a;
     a=b;
     b=temp;
 }
 
-void swap(int a[], int i, int j){
-    int temp=a[i];
-    a[i]=a[j];
-    a[j]=temp;
+void swap(int *a,int i,int j){
+    int temp=*(a+i);
+    *(a+i)=*(a+j);
+    *(a+j)=temp;
 }
 
-void minPos(int a[], int n, int pos){
-    for(int i=pos+1;i<n;i++){
-        if(a[pos]>a[i])swap(a[pos],a[i]);
-    }
-}
-
-void mrkSort(int a[], int n){
+void prntAry(const int *a,int n,int perLine){
+    cout<<endl;
     for(int i=0;i<n;i++){
-        minPos(a,n,i);
+        cout<<*(a+i)<<" ";
+        if(i%10==(perLine-1))cout<<endl;
     }
+    cout<<endl;
 }
 
-void copy(int a[], int b[], int n){
+//2 Digit random numbers
+void filAray(int *a,int n){
     for(int i=0;i<n;i++){
-        b[i]=a[i];
+        *(a+i)=rand()%90+10;
     }
 }
