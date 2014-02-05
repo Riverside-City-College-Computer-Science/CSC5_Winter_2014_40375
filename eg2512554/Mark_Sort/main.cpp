@@ -23,11 +23,11 @@ void xcopy(const int *,int *,int);
 
 //Executions Begin Here!
 int main(int argc, char** argv) {
-    //Declare variables, allocate memory, 
-    //and initialize the random number generator
+    //Declare variables and initialize the
+    //random number generator
     const int SIZE=200;
     int *array=new int[SIZE];
-    int *brray=new int[SIZE];
+    int *brray =new int[SIZE];
     srand(static_cast<unsigned int>(time(0)));
     //Fill the arrays
     filAray(array,SIZE);
@@ -70,7 +70,7 @@ void swap(int &a,int &b){
 }
 
 void swap(int *a,int i,int j){
-    int temp=*(a+i);
+    int temp= *(a+i);
     *(a+i)=*(a+j);
     *(a+j)=temp;
 }
@@ -90,3 +90,16 @@ void filAray(int *a,int n){
         *(a+i)=rand()%90+10;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
