@@ -1,0 +1,10 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=0040147B
+eax=20060000 ebx=00000011 ecx=00007C60 edx=20060000 esi=00007C5C edi=0022CD84
+ebp=0022ABE8 esp=0022ABC0 program=C:\Users\rcc\Desktop\Dynamic_2DArrays\dist\Debug\Cygwin_4.x-Windows\dynamic_2darrays.exe, pid 3412, thread main
+cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
+Stack trace:
+Frame     Function  Args
+0022ABE8  0040147B (200582D0, 00000002, 00000002, 20058300)
+0022AC38  0040131B (00000001, 0022AC5C, 20010100, 61007F58)
+0022ACF8  61007FB5 (00000000, 0022CD84, 61007120, 00000000)
+End of stack trace
